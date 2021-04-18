@@ -1,6 +1,8 @@
 # FRED APP (react-to-aws)
 
-An example React app bootstrapped with `create-react-app`. I am using this project is to show alternative way of deployment to AWS. Check my YouTube channel.
+An example React app bootstrapped with `create-react-app`, using this project is to show alternative way of deployment to AWS.
+
+From https://github.com/mateuszsokola/react-to-aws
 
 ## How to run (development mode)
 
@@ -15,10 +17,11 @@ You can request your api key here: https://research.stlouisfed.org/docs/api/api_
 
 2. Install dependencies and start a dev server
 
-```
-yarn install 
-yarn start
-```
+npm install
+npm start
 
-You can open the app in your browser (http://localhost:3000/)
+3. Other packages of interest
+
+https://www.npmjs.com/package/@craco/craco
+.tsx files - Why? - TypeScript code, open source programming language developed by Microsoft. TypeScript is a superset of ECMAScript 2015.
 

@@ -1,5 +1,8 @@
+// axios - Promise based HTTP client for the browser and node.js
 import axios, { AxiosResponse } from "axios";
+// handling the api output around line 40 with snakecaseKeys
 import snakecaseKeys from "snakecase-keys";
+// querystring parser that supports nesting and arrays, with a depth limit
 import { stringify } from "qs";
 
 export type Observation = {

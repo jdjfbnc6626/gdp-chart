@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
+// antd is 'enterprise-class UI design language and React UI library' - think material UI
 import { Button, Layout, Result, Spin, Typography } from "antd";
+// recharts is 'to help you to write charts in React applications'
 import {
   AreaChart,
   Area,
@@ -9,7 +11,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
-import { fetchObservations, Observation } from "./services/Observation";
+import { fetchObservations, Observation } from "./components/Observation";
 
 const { Header, Content } = Layout;
 const { Title } = Typography;
@@ -25,8 +27,9 @@ function App() {
       setState("loading");
       const observations = await fetchObservations("GDPCA", {
         frequency: "a",
-        observationStart: "1999-04-15",
-        observationEnd: "2020-04-15",
+        // Change these to see re-render
+        observationStart: "1979-05-01",
+        observationEnd: "2019-05-01",
       });
       setData(observations);
       setState("success");
@@ -42,7 +45,7 @@ function App() {
   const renderChart = () => {
     return (
       <Typography>
-        <Title level={3}>Real Gross Domestic Product</Title>
+        <Title level={3}>This is the JJ Real GDP Displayer</Title>
         <div style={{ width: "100%", height: "400px" }}>
           <ResponsiveContainer>
             <AreaChart
@@ -56,8 +59,8 @@ function App() {
             >
               <defs>
                 <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8} />
-                  <stop offset="95%" stopColor="#8884d8" stopOpacity={0} />
+                  <stop offset="5%" stopColor="#84d8ab" stopOpacity={0.8} />
+                  <stop offset="95%" stopColor="#84d8ab" stopOpacity={0} />
                 </linearGradient>
               </defs>
               <CartesianGrid stroke="#ccc" />
@@ -65,7 +68,7 @@ function App() {
               <Area
                 type="monotone"
                 dataKey="value"
-                stroke="#8884d8"
+                stroke="#84d8ab"
                 fillOpacity={1}
                 fill="url(#colorUv)"
               />
